@@ -5,11 +5,11 @@ from django.db.models import CharField, ForeignKey
 from phonenumber_field.modelfields import PhoneNumberField
 
 
-
 STATUS_CHOICES = (
     ('pro', 'Pro'),
     ('simple', 'Simple')
 )
+
 
 class User(AbstractUser):
     age =models.PositiveSmallIntegerField(validators=[MinValueValidator(16),
@@ -91,6 +91,6 @@ class FavoriteBook(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
 
 
-class Sitata(models.Model):
-    sitata = CharField(max_length=200)
-    book_sitata = ForeignKey(Book, on_delete=models.CASCADE)
+class Quote(models.Model):
+    quote = CharField(max_length=200)
+    book_quote = ForeignKey(Book, on_delete=models.CASCADE)
